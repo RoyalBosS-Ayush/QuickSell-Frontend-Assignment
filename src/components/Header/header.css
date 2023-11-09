@@ -1,0 +1,11 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: #fff;
+}

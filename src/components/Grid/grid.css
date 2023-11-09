@@ -1,0 +1,8 @@
+.grid {
+    min-height: 100vh;
+    background-color: #f4f5f8;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 1rem 2rem;
+}

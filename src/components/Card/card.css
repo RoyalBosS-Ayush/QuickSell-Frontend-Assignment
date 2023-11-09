@@ -1,0 +1,64 @@
+.card {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 0 0.5rem #12121221;
+    background-color: #fff;
+}
+.card .ticket-id {
+    color: #6b6f76;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+.card .title {
+    color: #282a2f;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.card .middle-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.card .bottom-container {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+.card .tag-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #edeff2;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+.card .tag-icon {
+    background-color: #bec2c8;
+    border-radius: 9999px;
+    height: 0.75rem;
+    width: 0.75rem;
+}
+.card .tag-text {
+    color: #6b6f76;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.card .top-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card .more-icon-container {
+    display: grid;
+    place-items: center;
+    border: 1px solid #edeff2;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;   
+}

@@ -1,0 +1,35 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.column .column-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.column .column-header-left-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.column .column-header-right-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.column .column-title {
+    font-size: 12px;
+}
+
+.column .column-title .count {
+    margin-left: 0.5rem;
+}

@@ -1,0 +1,22 @@
+.usericon-container {
+    display: grid;
+    place-items: center;
+    font-size: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+    background-color: #2b963a;
+    color: #fff;
+    border-radius: 9999px;
+    position: relative;
+}
+
+.usericon-container .user-status {
+    position: absolute;
+    bottom: -0.125rem;
+    right: -0.125rem;
+    border: 1px solid #fff;
+    background-color: #dfe1e4;
+    height: 0.25rem;
+    width: 0.25rem;
+    border-radius: 9999px;
+}
