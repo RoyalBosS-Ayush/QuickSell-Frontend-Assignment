@@ -56,3 +56,21 @@ const getPriotityLabel = (priority: number) => {
         default: return "NA";
     }
 }
+
+const orderByPriority = (tickets: Ticket[]) => tickets.sort((a: Ticket, b: Ticket) => a.priority > b.priority ? -1 : 1);
+const orderByTitle = (tickets: Ticket[]) => tickets.sort((a: Ticket, b: Ticket) => a.title < b.title ? -1 : 1);
+
+export const loadGrid = (tickets: Ticket[], grouping: string, ordering: string) => {
+    let orderedTickets;
+    if (ordering === "priority")
+        orderedTickets = orderByPriority(tickets);
+    else
+        orderedTickets = orderByTitle(tickets);
+
+    switch (grouping) {
+        case "status": return groupTicketsByStatus(orderedTickets);
+        case "priority": return groupTicketsByPriority(orderedTickets);
+        case "user": return groupTicketsByUserId(orderedTickets);
+        default: return groupTicketsByUserId(orderedTickets);
+    }
+}

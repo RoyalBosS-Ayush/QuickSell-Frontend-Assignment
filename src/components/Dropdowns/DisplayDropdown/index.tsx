@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState, ChangeEvent } from 'react';
 import './displayDropdown.css'
 import { LuSettings2 } from "react-icons/lu";
 import { BiChevronDown } from "react-icons/bi";
 
 
-function DisplayDropdown() {
+function DisplayDropdown({ grouping, setGrouping, ordering, setOrdering }: { grouping: string, setGrouping: (grouping: string) => void, ordering: string, setOrdering: (ordering: string) => void }) {
   const [visible, setVisible] = useState(false);
   const componentRef = useRef<HTMLDivElement | null>(null);
 
@@ -17,6 +17,9 @@ function DisplayDropdown() {
       setVisible(false);
     }
   }, []);
+
+  const onGroupingChange = useCallback((e: ChangeEvent<HTMLSelectElement>) => setGrouping(e.target.value), []);
+  const onOrderingChange = useCallback((e: ChangeEvent<HTMLSelectElement>) => setOrdering(e.target.value), []);
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
@@ -36,7 +39,7 @@ function DisplayDropdown() {
       <div className={`dropdown-content-container ${visible && "visible"}`}>
         <div className='dropdown-content-row'>
           <div className='dropdown-content-label'>Grouping</div>
-          <select name="grouping" id="grouping">
+          <select name="grouping" id="grouping" value={grouping} onChange={onGroupingChange}>
             <option value="status">Status</option>
             <option value="user">User</option>
             <option value="priority">Priority</option>
@@ -44,7 +47,7 @@ function DisplayDropdown() {
         </div>
         <div className='dropdown-content-row'>
           <div className='dropdown-content-label'>Ordering</div>
-          <select name="grouping" id="grouping">
+          <select name="ordering" id="ordering" value={ordering} onChange={onOrderingChange}>
             <option value="priority">Priority</option>
             <option value="title">Title</option>
           </select>

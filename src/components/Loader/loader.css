@@ -1,0 +1,11 @@
+.loader-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.loader-container.fullscreen {
+    height: calc(100vh - 60px); /* Header height: 60px */
+    width: 100vw;
+}
