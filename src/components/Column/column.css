@@ -28,8 +28,10 @@
 
 .column .column-title {
     font-size: 12px;
+    text-transform: capitalize;
 }
 
 .column .column-title .count {
     margin-left: 0.5rem;
+    color: #6b6f76;
 }

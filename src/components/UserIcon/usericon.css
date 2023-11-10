@@ -20,3 +20,7 @@
     width: 0.25rem;
     border-radius: 9999px;
 }
+
+.usericon-container .user-status.available {
+    background-color: #e8b602;
+}    

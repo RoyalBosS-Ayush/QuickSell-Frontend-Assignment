@@ -62,3 +62,7 @@
     border-radius: 0.25rem;
     padding: 0.25rem 0.5rem;   
 }
+
+.card svg {
+    flex-shrink: 0;
+}

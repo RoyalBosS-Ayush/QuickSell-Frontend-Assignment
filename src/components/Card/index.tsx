@@ -2,27 +2,30 @@ import React from 'react';
 import './card.css'
 import UserIcon from '../UserIcon';
 import { LuMoreHorizontal } from 'react-icons/lu';
-import { BiRadioCircle } from 'react-icons/bi';
+import { Ticket, User } from '../../interfaces';
+import { getStatusIcon } from '../../utils/helper';
 
-function Card() {
+function Card({ ticket, userData, hideStatusIcon, hideProfileIcon }: { ticket: Ticket, userData: User, hideStatusIcon: boolean, hideProfileIcon: boolean }) {
   return (
     <div className='card'>
       <div className='top-container'>
-        <div className='ticket-id'>CAM-11</div>
-        <UserIcon name='Ayush Munot' />
+        <div className='ticket-id'>{ticket.id}</div>
+        {hideProfileIcon ? null : <UserIcon name={userData.name} available={userData.available} />}
       </div>
       <div className='middle-container'>
-        <BiRadioCircle color='#e2e2e2' size={24} />
-        <div className='title'>Conduct Security Vulnerability Assessment</div>
+        {hideStatusIcon ? null : getStatusIcon(ticket.status)}
+        <div className='title'>{ticket.title}</div>
       </div>
       <div className='bottom-container'>
         <div className='more-icon-container'>
           <LuMoreHorizontal color="#797d84" />
         </div>
-        <div className='tag-container'>
-          <div className='tag-icon'></div>
-          <div className='tag-text'>Feature Request</div>
-        </div>
+        {ticket.tag.map((t: string) => (
+          <div key={t} className='tag-container'>
+            <div className='tag-icon'></div>
+            <div className='tag-text'>{t}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
