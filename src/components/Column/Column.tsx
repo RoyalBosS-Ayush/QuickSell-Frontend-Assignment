@@ -44,7 +44,9 @@ function Column({ tickets, grouping, groupBy, userIdToData }: { tickets: Ticket[
                     <LuMoreHorizontal color="#797d84" size={14} />
                 </div>
             </div>
-            {tickets.map((ticket: Ticket) => <Card key={ticket.id} ticket={ticket} userData={userIdToData[ticket.userId]} hideStatusIcon={grouping === "status"} hideProfileIcon={grouping === "user"} />)}
+            <div className='cards-container'>
+                {tickets.map((ticket: Ticket) => <Card key={ticket.id} ticket={ticket} userData={userIdToData[ticket.userId]} hideStatusIcon={grouping === "status"} hideProfileIcon={grouping === "user"} />)}
+            </div>
         </div>
     );
 }

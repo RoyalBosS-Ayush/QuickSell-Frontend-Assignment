@@ -66,3 +66,9 @@
 .card svg {
     flex-shrink: 0;
 }
+
+@media screen and (max-width:700px) {
+    .card {
+        min-width: fit-content;
+    }
+}

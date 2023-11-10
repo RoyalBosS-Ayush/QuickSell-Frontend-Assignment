@@ -5,6 +5,7 @@ import { GET_TICKETS_URL } from './constants';
 import { loadGrid, mapUsersByUserId } from './utils';
 import { Ticket, User } from './interfaces';
 import Loader from './components/Loader';
+import './App.css'
 
 function App() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
